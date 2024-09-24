@@ -29,7 +29,10 @@ const Navbar = () => {
             lang:"Telugu",
             code: "te"
             },
-
+            {
+              lang:"English",
+              code: "en"
+            }
 
 ];
 
@@ -63,7 +66,7 @@ const Navbar = () => {
 
      
       <div className="relative">
-       
+      
           {languages.map((language, index) => (
             <button
               key={index}
