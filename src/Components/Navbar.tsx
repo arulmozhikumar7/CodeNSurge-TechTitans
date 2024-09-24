@@ -72,7 +72,7 @@ const Navbar = () => {
               key={index}
               
               onClick={()=>setLanguage(language.code)}
-              className="px-4 py-2 hover:bg-purple-100 transition duration-200 ease-in-out cursor-pointer"
+              className="px-4 py-2  transition duration-200 ease-in-out cursor-pointer text-white hover:text-orange-500"
             >
               {language.lang}  
             </button>
