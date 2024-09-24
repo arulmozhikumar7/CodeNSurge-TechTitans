@@ -60,8 +60,9 @@ const Navbar = () => {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onKeyDown={(e) => (e.key === "Enter" ? (window.location.href = `/search/${query}`) : null)}
-        className="w-full md:w-1/3 bg-white border border-transparent focus:ring-4 focus:ring-purple-300 text-gray-900 py-2 px-4 rounded-lg shadow-lg placeholder-gray-500 transition duration-300 ease-in-out transform hover:scale-105"
-        placeholder="Search..."
+        className="w-full md:w-1/3 text-center ml-2 bg-white border border-transparent focus:ring-4 focus:ring-purple-300 text-gray-900 py-2 px-4s rounded-lg shadow-lg placeholder-gray-500 transition duration-300 ease-in-out transform hover:scale-105"
+        placeholder="Enter keywords: Politics,football,Cricket..."
+
       />
 
      

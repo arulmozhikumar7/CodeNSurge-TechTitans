@@ -68,7 +68,7 @@ const Weather = () => {
 
   return (
     <div
-      className={`flex flex-col md:flex-row justify-between items-center p-6 rounded-xl shadow-2xl ${getWeatherBackground()} transform hover:scale-105 transition duration-500 ease-in-out w-full max-w-xl mx-auto my-8`}>
+      className={`flex flex-col md:flex-row justify-between items-center p-6 rounded-xl shadow-2xl ${getWeatherBackground()} transform hover:scale-105 transition duration-500 ease-in-out w-1/3 mx-auto my-8`}>
       <div className="flex flex-col space-y-4 text-white">
         <h2 className="text-3xl font-bold">{currentWeather?.name}</h2>
         <p className="text-5xl font-semibold">
@@ -91,12 +91,12 @@ const Weather = () => {
           {currentWeather?.weather[0].main}
         </p>
       </div>
-      <div className="mt-6 md:mt-0 flex flex-col space-y-2 text-white">
+      {/* <div className="mt-6 md:mt-0 flex flex-col space-y-2 text-white">
         <p>Humidity: {currentWeather?.main.humidity}%</p>
         <p>Pressure: {currentWeather?.main.pressure} hPa</p>
         <p>Min Temp: {currentWeather?.main.temp_min}°C</p>
         <p>Max Temp: {currentWeather?.main.temp_max}°C</p>
-      </div>
+      </div> */}
     </div>
   );
 };
