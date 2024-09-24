@@ -64,7 +64,7 @@ const Stocks: React.FC = () => {
 
   return (
     <div className=" p-3 h-1">
-      <h1 className="text-xl font-bold mb-6 text-center text-gray-800">Stock Market Overview</h1>
+      <h1 className="text-xl font-bold my-7 mx-2 text-center text-gray-800">Stock Market Overview</h1>
       <div className="flex flex-wrap -mx-4">
         <StockTable stocks={topGainers} title="Top Gainers" />
         <StockTable stocks={topLosers} title="Top Losers" />

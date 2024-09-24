@@ -70,7 +70,7 @@ const Weather = () => {
     <div
       className={`flex flex-col md:flex-row justify-between items-center p-6 rounded-xl shadow-2xl ${getWeatherBackground()} transform hover:scale-105 transition duration-500 ease-in-out w-1/3 mx-auto my-8`}>
       <div className="flex flex-col space-y-4 text-white">
-        <h2 className="text-3xl font-bold">{currentWeather?.name}</h2>
+        <h2 className="text-2xl font-bold">{currentWeather?.name}</h2>
         <p className="text-5xl font-semibold">
           {currentWeather?.main.temp}°C
         </p>

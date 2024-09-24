@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Navbar from "./Components/Navbar";
-import { getAuth, onAuthStateChanged, User } from "firebase/auth"; // Import User type
+import { getAuth, onAuthStateChanged, User } from "firebase/auth"; 
 import useStore from "./Context/Store";
 
 import {Route, Routes } from "react-router-dom";
@@ -10,6 +10,7 @@ import Search from "./Components/Search";
 import Weather from "./Components/Weather";
 import Stocks from "./Components/Stocks";
 import Gold from "./Components/Gold"
+import Breaking from "./Components/Breaking";
 
 const App = () => {
   const { setUser } = useStore();
@@ -30,7 +31,8 @@ const App = () => {
     <>
     
     <Navbar />
- <div className="flex ">
+    <Breaking/>
+ <div className="flex  mx-24">
  <Weather/>
  <Stocks/>
  < Gold/>
