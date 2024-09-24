@@ -1,5 +1,4 @@
 import axios from "axios"
-import { endpointPath } from "../Config/api"
 import { useEffect, useState } from "react";
 import Loader from "./Loader";
 import toast, { Toaster } from "react-hot-toast";
@@ -7,6 +6,7 @@ import { db } from "../Auth/firebase"
 import { doc, setDoc,getDocs, query, where, collection } from "firebase/firestore";
 import { auth } from "../Auth/firebase";
 import { motion } from "framer-motion";
+import useStore from "../Context/Store";
 type SavedArticle = {
   id: string;
   title: string;
@@ -21,6 +21,7 @@ type SavedArticle = {
 
 
 const News = ({ country, category }: { country: string; category: string }) => {
+  const {language} = useStore();
   const [news, setNews] = useState<SavedArticle[]>([]);
   const [savedArticles, setSavedArticles] = useState<SavedArticle[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -99,8 +100,12 @@ const News = ({ country, category }: { country: string; category: string }) => {
   
   const getNews = async () => {
     try {
+      console.log(language);
+      const API_DOMAIN = "https://gnews.io/api/v4/top-headlines?country=";
+      const API_KEY = import.meta.env.VITE_APP_GNEWS_API_KEY;
       setIsLoading(true);
-      const response = await axios.get(endpointPath(country, category));
+      const response = await axios.get(`${API_DOMAIN}${country}&category=${category}&lang=${language}&apikey=${API_KEY}`)
+      
       setIsLoading(false);
       setNews(response.data.articles);
     } catch (error) {
@@ -118,7 +123,7 @@ const News = ({ country, category }: { country: string; category: string }) => {
      getSavedArticles();
     getNews();
    
-  }, [category]);
+  }, [language]);
 
   return (
     <>

@@ -7,18 +7,42 @@ import { useState } from "react";
 const Navbar = () => {
   const { user } = useStore();
   const [query, setQuery] = useState("");
-  const countries = ["India", "United States", "Canada", "United Kingdom", "Australia", "Germany"];
+  const {setLanguage} = useStore();
+  const languages = [
+    {
+    lang:"Tamil",
+    code: "ta"
+    },
+    {
+      lang:"Hindi",
+      code: "hi"
+      },
+      {
+        lang:"Malayalam",
+        code: "ml"
+        },
+        {
+          lang:"Marathi",
+          code: "mr"
+          },
+          {
+            lang:"Telugu",
+            code: "te"
+            },
+
+
+];
 
   return (
     <nav className="bg-gradient-to-r from-purple-500 to-indigo-500 shadow-lg p-4 flex flex-col md:flex-row items-center justify-between">
-      {/* Brand */}
+      
       <div className="text-white font-bold text-2xl tracking-wide mb-4 md:mb-0">
         <h1 className="hover:text-yellow-300 transition duration-300 ease-in-out">
           TECH TITANS
         </h1>
       </div>
 
-      {/* Navigation Links */}
+      
       <ul className="flex space-x-4 text-white font-semibold">
         {navs.map((nav, index) => (
           <li key={index} className="hover:text-yellow-300 transition duration-300 ease-in-out">
@@ -27,7 +51,7 @@ const Navbar = () => {
         ))}
       </ul>
 
-      {/* Search Box */}
+     
       <input
         type="text"
         value={query}
@@ -37,24 +61,24 @@ const Navbar = () => {
         placeholder="Search..."
       />
 
-      {/* Country Selector */}
+     
       <div className="relative">
-        <button className="bg-purple-700 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-purple-900 transition duration-300 ease-in-out">
-          Select Country
-        </button>
-        <ul className="absolute mt-2 bg-white rounded-lg shadow-lg py-2 w-48 text-gray-700 hidden group-hover:block">
-          {countries.map((country, index) => (
-            <li
+       
+          {languages.map((language, index) => (
+            <button
               key={index}
+              
+              onClick={()=>setLanguage(language.code)}
               className="px-4 py-2 hover:bg-purple-100 transition duration-200 ease-in-out cursor-pointer"
             >
-              {country}
-            </li>
+              {language.lang}  
+            </button>
           ))}
-        </ul>
+       
+        
       </div>
 
-      {/* Authentication Button */}
+      
       {user ? (
         <button
           onClick={logOut}
