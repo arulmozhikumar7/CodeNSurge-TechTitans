@@ -9,6 +9,7 @@ import News from "./Components/News";
 import Search from "./Components/Search";
 import Weather from "./Components/Weather";
 import Stocks from "./Components/Stocks";
+import Gold from "./Components/Gold"
 
 const App = () => {
   const { setUser } = useStore();
@@ -32,6 +33,7 @@ const App = () => {
  <div className="flex ">
  <Weather/>
  <Stocks/>
+ < Gold/>
  </div>
     <Routes>
       {router.map((route) => (
