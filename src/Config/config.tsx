@@ -4,8 +4,8 @@ export const navs = [
         path: "/",
     },
     {
-        name: "Entertainment",
-        path: "/categories/entertainment",
+        name: "Finance",
+        path: "/categories/finance",
     },
     {
         name: "Business",
@@ -30,7 +30,7 @@ export const router = [{
     key: "sports",
     category: "sports"
 },{
-    path: "/categories/entertainment",
-    key: "entertainment",
-    category: "entertainment"
+    path: "/categories/finance",
+    key: "finance",
+    category: "finance"
 }]

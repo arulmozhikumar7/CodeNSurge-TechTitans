@@ -6,6 +6,8 @@ interface StoreState {
   setUser: (user: User | null) => void; 
   country: string;
   setCountry: (country: string) => void;
+  language: string;
+  setLanguage: (language: string) => void;
 }
 
 const useStore = create<StoreState>((set) => ({
@@ -13,6 +15,8 @@ const useStore = create<StoreState>((set) => ({
   setUser: (user) => set({ user }), 
   country: "India",
   setCountry: (country) => set({ country }),
+  language: "en",
+  setLanguage: (language)=>set({language})
 }));
 
 export default useStore;

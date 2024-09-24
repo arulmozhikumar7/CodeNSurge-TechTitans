@@ -37,9 +37,10 @@ const App = () => {
  </div>
     <Routes>
       {router.map((route) => (
-        <Route key={route.key} path={route.path} element={<News category={route.category} country={"india"} />} />
+        <Route key={route.key} path={route.path} element={<News category={route.category} country={"in"} />} />
       ))}
         <Route path="/search/:query" element={<Search query={window.location.pathname.split("/search/")[1]} />} />
+        
     </Routes>
     </>
   );
