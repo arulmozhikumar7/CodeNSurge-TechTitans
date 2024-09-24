@@ -10,7 +10,7 @@ const Gold = () => {
     myHeaders.append("x-access-token", "goldapi-5e4husm1g7y8bx-io");
     myHeaders.append("Content-Type", "application/json");
 
-    var requestOptions = {
+    var requestOptions:any = {
       method: 'GET',
       headers: myHeaders,
       redirect: 'follow',
