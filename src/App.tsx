@@ -8,6 +8,7 @@ import { router } from "./Config/config";
 import News from "./Components/News";
 import Search from "./Components/Search";
 import Weather from "./Components/Weather";
+import Stocks from "./Components/Stocks";
 
 const App = () => {
   const { setUser } = useStore();
@@ -30,6 +31,7 @@ const App = () => {
     <Navbar />
  <div className="flex ">
  <Weather/>
+ <Stocks/>
  </div>
     <Routes>
       {router.map((route) => (
