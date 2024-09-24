@@ -39,7 +39,7 @@ const Gold = () => {
 
   return (
     <div className="p-3 my-6 transform hover:scale-105 transition duration-500 ease-in-out bg-gradient-to-r from-yellow-100 to-yellow-300 rounded-lg shadow-lg w-1/3 mx-auto">
-      <h1 className="text-2xl font-bold text-center text-yellow-800 mb-4">Gold Rates</h1>
+      <h1 className="text-xl font-bold text-center text-yellow-800 mb-2">Gold Rate</h1>
       <p className="text-center text-sm text-gray-600 mb-2">Date: {new Date().toLocaleDateString()}</p>
 
       <div className="flex flex-col gap-2">
